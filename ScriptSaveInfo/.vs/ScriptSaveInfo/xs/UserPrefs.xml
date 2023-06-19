@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{9EFCCEB0-F783-427A-B4A9-92B2133E9E22}|Default">
+  <MonoDevelop.Ide.ItemProperties.ScriptSaveInfo PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ScriptSaveInfo/Program.cs">
+    <Files>
+      <File FileName="ScriptSaveInfo/Program.cs" Line="18" Column="47" />
+      <File FileName="ScriptSaveInfo/scriptWin.sh" Line="6" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ScriptSaveInfo" expanded="True">
+            <Node name="ScriptSaveInfo" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

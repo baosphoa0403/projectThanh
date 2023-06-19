@@ -1,0 +1,17 @@
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/ScriptSaveInfo
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/ScriptSaveInfo.deps.json
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/ScriptSaveInfo.runtimeconfig.json
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/ScriptSaveInfo.dll
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/ScriptSaveInfo.pdb
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.csproj.AssemblyReference.cache
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.AssemblyInfoInputs.cache
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.AssemblyInfo.cs
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.csproj.CoreCompileInputs.cache
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.dll
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/refint/ScriptSaveInfo.dll
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.pdb
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.genruntimeconfig.cache
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ref/ScriptSaveInfo.dll
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/Debug/net7.0/ScriptSaveInfo.csproj.CopyComplete
