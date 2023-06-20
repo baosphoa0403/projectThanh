@@ -15,6 +15,21 @@
           }
         }
       }
+    },
+    "net7.0/win10-x64": {
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -55,19 +70,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/giabao/.nuget/packages/": {}
+    "/home/bao/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/ScriptSaveInfo.csproj",
+      "projectUniqueName": "/home/bao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/ScriptSaveInfo.csproj",
       "projectName": "ScriptSaveInfo",
-      "projectPath": "/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/ScriptSaveInfo.csproj",
-      "packagesPath": "/Users/giabao/.nuget/packages/",
-      "outputPath": "/Users/giabao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/",
+      "projectPath": "/home/bao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/ScriptSaveInfo.csproj",
+      "packagesPath": "/home/bao/.nuget/packages/",
+      "outputPath": "/home/bao/Desktop/projectThanh/ScriptSaveInfo/ScriptSaveInfo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/giabao/.nuget/NuGet/NuGet.Config"
+        "/home/bao/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -107,12 +122,31 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[7.0.7, 7.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.7, 7.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[7.0.7, 7.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win10-x64": {
+        "#import": []
       }
     }
   }

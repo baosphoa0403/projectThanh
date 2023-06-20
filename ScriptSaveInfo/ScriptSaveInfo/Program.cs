@@ -11,22 +11,24 @@ namespace scriptSaveInfo {
         public string hostName { get; set; }
         public string ipAddress { get; set; }
         public string anyDesk { get; set; }
+        public string ultraview { get; set; }
         public string cpu { get; set; }
         public string ram { get; set; }
-        public string disk { get; set; }
+        public string mac { get; set; }
         public string os { get; set; }
         public string shutDownTime { get; set; }
 
-        public Data(string hostName, string ipAddress, string anyDesk, string cpu, string ram, string disk, string os, string shutDownTime)
+        public Data(string hostName, string ipAddress, string anyDesk, string ultraview ,string cpu, string ram, string mac, string os, string shutDownTime)
         {
             this.hostName = hostName;
             this.ipAddress = ipAddress;
             this.anyDesk = anyDesk;
             this.cpu = cpu;
             this.ram = ram;
-            this.disk = disk;
+            this.mac = mac;
             this.os = os;
             this.shutDownTime = shutDownTime;
+            this.ultraview = ultraview;
         }
     }
 
@@ -38,7 +40,7 @@ namespace scriptSaveInfo {
 
             Console.WriteLine("Hihi");
             //string currentDirectory = Directory.GetCurrentDirectory();
-            string scriptPath = "../../../../script.sh";
+            string scriptPath = "../scriptWin.sh";
             //string relativePath = Path.GetRelativePath(currentDirectory, scriptPath);
             //Console.WriteLine(relativePath);
             // Create a new process and configure the start info
@@ -55,9 +57,10 @@ namespace scriptSaveInfo {
             string anyDesk = "";
             string cpu = "";
             string ram = "";
-            string disk = "";
+            string mac = "";
             string os = "";
             string shutDownTime = "";
+            string ultraview = "";
 
             string output = "";
             // Create a new StringContent object with the request body
@@ -85,10 +88,11 @@ namespace scriptSaveInfo {
                 ipAddress = tmp[1];
                 anyDesk = tmp[2];
                 cpu = tmp[3];
-                ram = tmp[0];
-                disk = tmp[0];
-                os = tmp[0];
-                shutDownTime = tmp[0];
+                ram = tmp[4];
+                mac = tmp[5];
+                os = tmp[6];
+                shutDownTime = tmp[7];
+                ultraview = tmp[8];
             }
             //var requestBody = "{\"username\": \"john_doe\", \"email\": \"john.doe@example.com\"}";
             var requestBody = new Data(hostName,
@@ -96,9 +100,9 @@ namespace scriptSaveInfo {
              anyDesk,
              cpu,
              ram,
-             disk,
+             mac,
              os,
-             shutDownTime);
+             shutDownTime,ultraview);
             string json = JsonConvert.SerializeObject(requestBody);
 
             Console.WriteLine(json);

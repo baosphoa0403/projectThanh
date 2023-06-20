@@ -7,12 +7,14 @@ ipconfig | findstr IPv4
 for /f "delims=" %%i in ('"C:\Program Files (x86)\AnyDesk\AnyDesk.exe" --get-id') do set ID=%%i 
 echo AnyDesk ID is: %ID%
 pause
+# ultraview
+Get-ItemPropertyValue "HKLM:\SOFTWARE\WOW6432Node\UltraViewer" "PreferID"
 # CPU
 wmic cpu get name 
 # Ram
 systeminfo | grep "Total Physical Memory"
-# Disk
-
+# Mac
+wmic bios get serialnumber
 # OS
 ver
 # ShutDownTime
