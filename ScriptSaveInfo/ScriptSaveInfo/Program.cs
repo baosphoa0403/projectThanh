@@ -39,48 +39,71 @@ namespace scriptSaveInfo {
             Console.WriteLine("Hello, World!");
 
             Console.WriteLine("Hihi");
-            //string currentDirectory = Directory.GetCurrentDirectory();
-            string scriptPath = "../scriptWin.sh";
-            //string relativePath = Path.GetRelativePath(currentDirectory, scriptPath);
-            //Console.WriteLine(relativePath);
-            // Create a new process and configure the start info
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "/bin/bash"; // Use the Bash shell to run the script
-            startInfo.Arguments = scriptPath; // Pass the path to the script as an argument
-            startInfo.RedirectStandardOutput = true; // Redirect the output of the script to our console
-            startInfo.UseShellExecute = false; // Don't use the default shell to execute the script
-           
-            using var client = new HttpClient();
-            string apiUrl = "http://localhost:3000/infoComputer";
-            string hostName = "";
-            string ipAddress = "";
-            string anyDesk = "";
-            string cpu = "";
-            string ram = "";
-            string mac = "";
-            string os = "";
-            string shutDownTime = "";
-            string ultraview = "";
+            
+             string command = @"
+                # get hostname
+                hostname 
+                # get ip address
+                ipconfig | findstr IPv4
+                # anydesk
+                @echo off
+                pause
+                # CPU
+                wmic cpu get name 
+                # Mac
+                wmic bios get serialnumber
+                # OS
+                ver
+                # ShutDownTime
+                wevtutil qe system “/q:*[System [(EventID=1074)]]” /rd:true /f:text /c:1
+             ";
 
-            string output = "";
-            // Create a new StringContent object with the request body
-            // Start the process and wait for it to exit
-            using (Process process = Process.Start(startInfo))
+        // Create a new process to execute the Bash command
+        Process process = new Process();
+
+        // Configure the process to execute the Bash command with the -c option and the command as an argument
+        process.StartInfo.FileName = "bash";
+        process.StartInfo.Arguments = "-c \"" + command + "\"";
+
+        // Redirect the standard output and error streams to the console
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+
+        // Start the process
+        process.Start();
+
+        // Read the standard output and error streams and print them to the console
+        // string output = process.StandardOutput.ReadLine();
+        // string error = process.StandardError.ReadToEnd();
+        string output = "";
+        using (StreamReader reader = process.StandardOutput)
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                // Read the output of the script one line at a time
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        output += line + "&&&";
-                    }
-                }
-
-                process.WaitForExit();
+                output += line + "&&&";
             }
-            Console.WriteLine("Script output:");
-            Console.WriteLine(output.Split("&&&"));
+            process.WaitForExit();
+        }
+
+
+        Console.WriteLine("Standard output:");
+        Console.WriteLine(output);
+        using var client = new HttpClient();
+        string apiUrl = "http://10.151.85.232:3000/infoComputer";
+        string hostName = "";
+        string ipAddress = "";
+        string anyDesk = "";
+        string cpu = "";
+        string ram = "";
+        string mac = "";
+        string os = "";
+        string shutDownTime = "";
+        string ultraview = "";
+      
+
+         Console.WriteLine(output.Split("&&&"));
             string[] tmp = output.Split("&&&");
             if (tmp.Length > 0)
             {
@@ -115,6 +138,48 @@ namespace scriptSaveInfo {
 
             // Print the response content to the console
             Console.WriteLine(responseContent);
+            //string currentDirectory = Directory.GetCurrentDirectory();
+            // string scriptPath = "../scriptWin.sh";
+            // //string relativePath = Path.GetRelativePath(currentDirectory, scriptPath);
+            // //Console.WriteLine(relativePath);
+            // // Create a new process and configure the start info
+            // ProcessStartInfo startInfo = new ProcessStartInfo();
+            // startInfo.FileName = "/bin/bash"; // Use the Bash shell to run the script
+            // startInfo.Arguments = scriptPath; // Pass the path to the script as an argument
+            // startInfo.RedirectStandardOutput = true; // Redirect the output of the script to our console
+            // startInfo.UseShellExecute = false; // Don't use the default shell to execute the script
+           
+            // using var client = new HttpClient();
+            // string apiUrl = "http://10.151.85.232:3000/infoComputer";
+            // string hostName = "";
+            // string ipAddress = "";
+            // string anyDesk = "";
+            // string cpu = "";
+            // string ram = "";
+            // string mac = "";
+            // string os = "";
+            // string shutDownTime = "";
+            // string ultraview = "";
+
+            // string output = "";
+            // // Create a new StringContent object with the request body
+            // // Start the process and wait for it to exit
+            // using (Process process = Process.Start(startInfo))
+            // {
+            //     // Read the output of the script one line at a time
+            //     using (StreamReader reader = process.StandardOutput)
+            //     {
+            //         string line;
+            //         while ((line = reader.ReadLine()) != null)
+            //         {
+            //             output += line + "&&&";
+            //         }
+            //     }
+
+            //     process.WaitForExit();
+            // }
+            // Console.WriteLine("Script output:");
+           
         }
     }
 }
